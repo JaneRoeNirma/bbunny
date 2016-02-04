@@ -1,0 +1,29 @@
+Bugged Code :
+
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+  char st1[] = "abc";
+  char st2[] = "abc";
+  if ( st1 == st2 )
+    printf("Yes");
+  else
+    printf("No");
+}
+
+Correct Code :
+
+include<stdio.h>
+#include<string.h>
+
+void main(){
+  char st1[] = "abc";
+  char st2[] = "abc";
+  if ( strcmp(sr1,str2) )
+    printf("Yes");
+  else
+    printf("No");
+}
+
+Bug Line No : 9
