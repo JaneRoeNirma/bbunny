@@ -1,0 +1,32 @@
+
+Bugged Code:
+
+#include<stdio.h>
+
+void main()
+{
+	char array[] = "abcdefghijklmnopqrstuvwxyz";
+	char *ptr = array ;
+	while (*ptr != '\0')
+	{
+		printf("%c ", *ptr);
+		*ptr = *ptr + 1;
+	}
+}
+
+Correct Code:
+
+#include<stdio.h>
+
+void main()
+{
+	char array[] = "abcdefghijklmnopqrstuvwxyz";
+	char *ptr = array ;
+	while (*ptr != '\0')
+	{
+		printf("%c ", *ptr);
+		ptr = ptr + 1;  // OR *ptr++, ptr++, BUT NOT (*ptr)++
+	}
+}
+
+Bugged line no.: 10
