@@ -1,0 +1,26 @@
+
+bugged code :
+
+#include<stdio.h>
+
+void main()
+{
+	int a;
+	int *ptr = a;
+	scanf("%d", &a);
+	printf("%d", *ptr);
+}
+
+correct code :
+
+#include<stdio.h>
+
+void main()
+{
+	int a;
+	int *ptr = &a;
+	scanf("%d", &a);
+	printf("%d", *ptr);
+}
+
+Bugged line no.: 6

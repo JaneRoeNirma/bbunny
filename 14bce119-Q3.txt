@@ -1,0 +1,55 @@
+bugged code :
+
+#include<iostream>
+#include<stdio.h>
+
+using namespace std;
+
+int main()
+{
+    int a[10] = {9,8,2,5,4,1,7,3,6,10};
+    int temp ;
+    for (int i=0 ; i<10 ; i++)
+    {
+        for (int j=i ; j<10 ; j++)
+        {
+            if ( a[j] > a[j+1] )
+            {
+                temp = a[j] ;
+                a[j] = a[j+1];
+                a[j+1] = temp ;
+            }
+        }
+    }
+    for (int i=0 ; i<10 ; i++)
+        cout << a[i] << " ";
+}
+
+Correct code :
+
+#include<iostream>
+#include<stdio.h>
+
+using namespace std;
+
+int main()
+{
+    int a[10] = {9,8,2,5,4,1,7,3,6,10};
+    int temp ;
+    for (int i=0 ; i<10 ; i++)
+    {
+        for (int j=0 ; j<10-i ; j++)
+        {
+            if ( a[j] > a[j+1] )
+            {
+                temp = a[j] ;
+                a[j] = a[j+1];
+                a[j+1] = temp ;
+            }
+        }
+    }
+    for (int i=0 ; i<10 ; i++)
+        cout << a[i] << " ";
+}
+
+bugged line no.: 12
